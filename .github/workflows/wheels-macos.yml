@@ -48,6 +48,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.x"
+      - name: System Informaton
+        run: |
+          echo "PLAT: ${PLAT}"
+          echo Platform: $(uname -m)
       - name: Build Wheel
         run: .github/workflows/build.sh
       - uses: actions/upload-artifact@v3
