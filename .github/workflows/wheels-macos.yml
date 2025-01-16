@@ -52,12 +52,7 @@ jobs:
         run: |
           echo "PLAT: ${PLAT}"
           echo Platform: $(uname -m)
-          sudo mkdir -p /usr/local/lib
-          ls -la /usr/local/lib
-      - name: Set permissions
-        run: |
-          sudo chmod 755 /usr/local/lib
-          ls -la /usr/local/lib
+          sudo mkdir -p /usr/local/lib /usr/local/include
       - name: Build Wheel
         run: .github/workflows/build.sh
       - uses: actions/upload-artifact@v3
