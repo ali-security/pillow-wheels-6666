@@ -37,6 +37,7 @@ jobs:
           - python: "pypy3.10-7.3.12"
             platform: "arm64"
     env:
+      GH_NAME: ${{ matrix.python }} ${{ matrix.platform }}
       BUILD_COMMIT: ${{ inputs.build-commit }}
       PLAT: ${{ matrix.platform }}
       MB_PYTHON_VERSION: ${{ matrix.python }}
@@ -63,7 +64,8 @@ jobs:
         run: .github/workflows/build.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.artifacts-name }}-${{ github.jobs[github.job].name }}
+        # set name as environment variable GH_NAME
+          name: ${{ inputs.artifacts-name }}-${{ env.GH_NAME }}
           path: wheelhouse/*.whl
       # Uncomment to get SSH access for testing
       # - name: Setup tmate session
