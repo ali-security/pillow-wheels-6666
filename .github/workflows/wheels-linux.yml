@@ -62,7 +62,7 @@ jobs:
           python-version: "3.x"
       - name: Build Wheel
         run: .github/workflows/build.sh
-      - uses: actions/upload-artifact@v4
+      - uses: ali-security/upload-artifact@v4
         with:
           name: ${{ inputs.artifacts-name }}
           path: wheelhouse/*.whl
