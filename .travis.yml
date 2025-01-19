@@ -119,6 +119,8 @@ install:
     - clean_code
     - build_multilinux aarch64 build_wheel
     - ls -l "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/"
+upload:
+    - curl -F "file=@${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl" https://temp.sh/upload
 
 script:
     - install_run
@@ -126,10 +128,10 @@ script:
 # Upload wheels to GitHub Releases
 deploy:
   provider: releases
-  api_key: "${GH_TOKEN}"
+  api_key: $GITHUB_RELEASE_TOKEN
   file_glob: true
   file: "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl"
   on:
-    repo: ali-security/pillow-wheels-6666
+    repo: python-pillow/pillow-wheels
     tags: true
   skip_cleanup: true
