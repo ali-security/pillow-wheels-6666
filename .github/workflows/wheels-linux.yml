@@ -63,6 +63,8 @@ jobs:
           python-version: "3.x"
       - name: Build Wheel
         run: .github/workflows/build.sh
+      - name: list files
+        run: ls -l wheelhouse
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifacts-name }}-linux-${{ env.GH_NAME }}

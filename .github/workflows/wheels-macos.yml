@@ -62,6 +62,8 @@ jobs:
           sudo mkdir -p /usr/local/lib /usr/local/include
       - name: Build Wheel
         run: .github/workflows/build.sh
+      - name: list files
+        run: ls -l wheelhouse
       - uses: actions/upload-artifact@v4
         with:
         # set name as environment variable GH_NAME
