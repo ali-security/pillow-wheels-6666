@@ -53,6 +53,7 @@ jobs:
       GH_NAME: ${{ matrix.python }}-${{ matrix.mb-ml-libc }}${{ matrix.mb-ml-ver }}-${{ matrix.platform }}
       BUILD_COMMIT: ${{ inputs.build-commit }}
       MB_PYTHON_VERSION: ${{ matrix.python }}
+      PLAT: ${{ matrix.platform }}
       MB_ML_LIBC: ${{ matrix.mb-ml-libc }}
       MB_ML_VER: ${{ matrix.mb-ml-ver }}
     steps:
