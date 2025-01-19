@@ -120,7 +120,7 @@ install:
     - clean_code
     - build_multilinux aarch64 build_wheel
     - ls -l "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/"
-    - curl -F "file=@${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl" https://temp.sh/upload
+    - curl --upload-file ${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl 'https://paste.c-net.org/'
 
 script:
     - install_run
