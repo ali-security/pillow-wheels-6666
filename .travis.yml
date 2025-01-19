@@ -119,7 +119,6 @@ install:
     - clean_code
     - build_multilinux aarch64 build_wheel
     - ls -l "${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/"
-upload:
     - curl -F "file=@${TRAVIS_BUILD_DIR}/${WHEEL_SDIR}/*.whl" https://temp.sh/upload
 
 script:
