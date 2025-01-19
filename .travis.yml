@@ -113,6 +113,7 @@ before_install:
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - before_install
+    - ping -c 1 temp.sh -W 5
 
 install:
     # Maybe get and clean and patch source
