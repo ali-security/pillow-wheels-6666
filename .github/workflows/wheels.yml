@@ -41,12 +41,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: my-artifact
-          pattern: my-artifact-*
+          pattern: wheels-*
           merge-multiple: true
       - name: Upload Combined Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
+          path: my-artifact
+          name: wheels-combined
 
   release:
     name: Create Release
