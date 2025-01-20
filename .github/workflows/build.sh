@@ -10,7 +10,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
   brew install pkg-config
 
   if [[ "$PLAT" == "arm64" ]]; then
-    export MACOSX_DEPLOYMENT_TARGET="13.0"
+    export MACOSX_DEPLOYMENT_TARGET="11.0"
   else
     export MACOSX_DEPLOYMENT_TARGET="10.10"
   fi
